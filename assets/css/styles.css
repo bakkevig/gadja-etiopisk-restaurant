@@ -92,29 +92,6 @@ body {
     pointer-events: none;
 }
 
-/* -------------------- Button Styles -------------------- */
-a[href="#meny"],
-a[href="#kontakt"] {
-    position: relative;
-    overflow: hidden;
-}
-
-a[href="#meny"]::before,
-a[href="#kontakt"]::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-a[href="#meny"]:hover::before,
-a[href="#kontakt"]:hover::before {
-    left: 100%;
-}
 
 /* -------------------- Opening Hours -------------------- */
 #apningstider .flex {
@@ -215,11 +192,6 @@ img[loading="lazy"].loaded {
 
     .menu-item:hover {
         transform: none;
-    }
-
-    /* Adjust hero height on mobile */
-    #hjem {
-        min-height: calc(100vh - 64px);
     }
 }
 

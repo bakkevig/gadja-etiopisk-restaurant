@@ -112,7 +112,16 @@
         translatableElements.forEach(function(element) {
             const translation = element.getAttribute('data-' + currentLang);
             if (translation) {
-                element.textContent = translation;
+                // Check if translation looks like a file path (contains / or file extension)
+                const isFilePath = translation.includes('/') || translation.match(/\.\w{2,4}$/);
+
+                if (isFilePath && element.tagName === 'IMG') {
+                    element.src = translation;
+                } else if (isFilePath && element.tagName === 'A') {
+                    element.href = translation;
+                } else {
+                    element.textContent = translation;
+                }
             }
         });
 
